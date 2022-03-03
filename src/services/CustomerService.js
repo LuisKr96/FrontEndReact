@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-const API_BASE_URL = "http://localhost:8080/home/Customers"
+const API_BASE_URL = "http://3.87.45.131:8080/home/Customers"
 
 
 class CustomerService{

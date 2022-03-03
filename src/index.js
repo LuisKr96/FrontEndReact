@@ -33,7 +33,7 @@ class Put extends React.Component{
     }
     handleSubmit = (e) => {
         e.preventDefault()
-        axios.put("http://localhost:8080/home/Review/Update/" + this.state.review_id + "?consumer_review=" + this.state.consumer_review)
+        axios.put("http://3.87.45.131:8080/home/Review/Update/" + this.state.review_id + "?consumer_review=" + this.state.consumer_review)
             .then((response) => console.log(response))
             .catch((error) => console.log(error))
     }
@@ -74,7 +74,7 @@ class Delete extends React.Component{
     handleSubmit = (e) => {
         e.preventDefault();
 
-        axios.delete(`http://localhost:8080/home/Review/Delete/${this.state.review_id}`
+        axios.delete(`http://3.87.45.131:8080/home/Review/Delete/${this.state.review_id}`
         )
         .then((response) => {
             console.log(response)
@@ -114,7 +114,7 @@ class Post extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
-        axios.post("http://localhost:8080/home/Review/Add/?film_id=" + this.state.film_id + "&consumer_review="  + this.state.consumer_review)
+        axios.post("http://3.87.45.131:8080/home/Review/Add/?film_id=" + this.state.film_id + "&consumer_review="  + this.state.consumer_review)
     
     .then((response) => console.log(response))
     .catch((error) => console.log(error))
@@ -186,7 +186,7 @@ class MovieTable extends React.Component{
     }
     
     componentDidMount() {  
-            axios.get('http://localhost:8080/home/AllFilm')
+            axios.get('http://3.87.45.131:8080/home/AllFilm')
                 .then (response => this.setState({totalMovies: response.data}))
         
     }
