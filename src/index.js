@@ -36,6 +36,7 @@ class Put extends React.Component{
         axios.put("http://3.87.45.131:8080/home/Review/Update/" + this.state.review_id + "?consumer_review=" + this.state.consumer_review)
             .then((response) => console.log(response))
             .catch((error) => console.log(error))
+            window.location.reload(false);
     }
     render() {
         const { errorMessage } = this.state;
@@ -79,6 +80,7 @@ class Delete extends React.Component{
         .then((response) => {
             console.log(response)
             console.log(response.data)
+            window.location.reload(false);
         })
     }
     render(){
@@ -117,7 +119,8 @@ class Post extends React.Component {
         axios.post("http://3.87.45.131:8080/home/Review/Add/?film_id=" + this.state.film_id + "&consumer_review="  + this.state.consumer_review)
     
     .then((response) => console.log(response))
-    .catch((error) => console.log(error))
+            .catch((error) => console.log(error))
+        window.location.reload(false);
     }
     render() {
         return (
@@ -237,17 +240,7 @@ class SearchBar extends React.Component{
                     onChange={(e) => this.props.onFilterTextChange(e.target.value)} 
                     />
                 
-                    Choose category: <select
-                        name="category"
-                        id="category">
-                        <option value="" selected="selected">Category</option>
-                        <option value="" selected="selected">Action</option>
-                        <option value="" selected="selected">Comedy</option>
-                        <option value="" selected="selected">Drama</option>
-                        <option value="" selected="selected">Documentary</option>
-                        <option value="" selected="selected">Sports</option>
-                        <option value="" selected="selected">Romance</option> 
-                    </select>
+                   
                     
                     {/* <input type="checkbox" checked={inStockOnly} 
                         onChange={(e) => this.props.onInStockChange(e.target.checked)}
@@ -274,12 +267,6 @@ class NavigationBar extends React.Component {
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <a className="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a className="nav-link" href="#">Reviews</a>
                             </li>
                             <li class="nav-item">
                                 <a className="nav-link" href="#">Customer</a>
