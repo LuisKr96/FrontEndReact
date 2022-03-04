@@ -125,7 +125,7 @@ class Post extends React.Component {
     render() {
         return (
             <div className="post">
-                <form className="post" onSubmit={this.handleSubmit}>
+                <form className="post" onClick={this.handleSubmit}>
                     <input className="postBoxFilmId" placeholder="Film ID"
                     value={this.state.film_id}
                     onChange={this.filmIdChange}
@@ -136,7 +136,7 @@ class Post extends React.Component {
                     onChange={this.consumerReviewChange}
                     required/>
                     
-                    <button className="postButton" onSubmit={this.handleSubmit} type="submit">POST</button>
+                    <button className="postButton" onClick={this.handleSubmit} type="submit">POST</button>
                 </form>
                 <br></br>
 
